@@ -1,34 +1,45 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [form, setForm] = useState({ username: '', email: '', password: '' })
+  const [message, setMessage] = useState('')
+
+  const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+
+  const handleSubmit = async (path) => {
+    try {
+      const res = await fetch(`/api/auth/${path}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      const text = await res.text()
+      setMessage(text)
+    } catch (err) {
+      setMessage('Error connecting to backend')
+    }
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <h1>Auth Demo</h1>
+
+      <div className="form">
+        <input name="username" placeholder="Username" value={form.username} onChange={handleChange} />
+        <input name="email" placeholder="Email" value={form.email} onChange={handleChange} />
+        <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange} />
+
+        <div className="buttons">
+          <button onClick={() => handleSubmit('register')}>Register</button>
+          <button onClick={() => handleSubmit('login')}>Login</button>
+        </div>
+
+        {message && <p className="message">{message}</p>}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+
+      <p className="note">Dev proxy is configured: requests to <code>/api</code> are forwarded to the backend.</p>
+    </div>
   )
 }
 
