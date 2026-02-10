@@ -1,0 +1,119 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* App-level styles for auth and dashboard pages */
+.auth-container {
+  max-width: 420px;
+  margin: 3rem auto;
+  background: #ffffffee;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(12, 12, 20, 0.08);
+  padding: 2rem;
+  text-align: left;
+}
+.auth-container h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  color: #111827;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.9rem;
+}
+.field label {
+  font-size: 0.85rem;
+  color: #374151;
+  margin-bottom: 0.35rem;
+}
+.input {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.1rem;
+  background: linear-gradient(90deg,#6366f1,#8b5cf6);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.secondary {
+  background: #f3f4f6;
+  color: #111827;
+}
+.muted {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.card-centered {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(12,12,20,0.06);
+}
+.profile-row {
+  display:flex;
+  gap:1.2rem;
+  align-items:center;
+}
+.error {
+  color: #b91c1c;
+  margin-bottom: 0.6rem;
+}
+.success {
+  color: #166534;
+  margin-bottom: 0.6rem;
+}

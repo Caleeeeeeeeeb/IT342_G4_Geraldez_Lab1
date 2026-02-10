@@ -1,0 +1,16 @@
+# --- Android Ignores ---
+.gradle/
+.idea/
+build/
+app/build/
+local.properties
+*.iml
+.DS_Store
+
+# --- Spring Boot Ignores ---
+target/
+mvnw
+mvnw.cmd
+.mvn/
+*.class
+*.log
