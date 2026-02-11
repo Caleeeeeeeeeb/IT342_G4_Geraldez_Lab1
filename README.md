@@ -1,9 +1,10 @@
-Mini_app
-Description
 
-Simple full-stack app with login, registration, dashboard, profile, and logout.
 
-Tech Stack
+🟢 Mini_app
+
+A simple full-stack app with login, registration, dashboard, profile, and logout.
+
+🚀 Tech Stack
 
 Frontend: React.js
 
@@ -13,12 +14,15 @@ Mobile: Android Studio (Iguana 2023.2.1)
 
 Database: MySQL
 
-Database Setup
+🗄 Database Setup
+
+Create the database:
+
 CREATE DATABASE mini_app;
 
 
 
-Backend config (application.properties):
+Configure backend (application.properties):
 
 spring.datasource.url=jdbc:mysql://localhost:3306/mini_app
 spring.datasource.username=root
@@ -26,37 +30,50 @@ spring.datasource.password=yourpassword
 spring.jpa.hibernate.ddl-auto=update
 server.port=8080
 
-Environment Variables
+⚙ Environment Variables
 
-Frontend .env:
+Frontend (.env):
 
 REACT_APP_API_BASE_URL=http://localhost:8080/api
 
 
 Mobile: Set API base URL in Retrofit/network config.
 
-Running the Project
-
-Backend:
-
+🖥 Running the Project
+Backend
 cd backend
 mvn clean install
 mvn spring-boot:run
 
-
-Frontend:
-
+Web Frontend
 cd frontend
 npm install
 npm run dev
 
 
-Mobile: Open in Android Studio, connect device/emulator, Run ‘app’.
+Runs at: http://localhost:3000
 
-API Endpoints
-Endpoint	                    Method	                    Description
-/api/auth/register	            POST	                      Register user
-/api/auth/login	                POST	                      Login user
-/api/user/profile	            GET	                          Get profile
-/api/user/profile	            PUT	                          Update profile
-/api/auth/logout	            POST	                      Logout user
+Mobile App
+
+Open in Android Studio
+
+Connect device/emulator
+
+Run ‘app’
+
+📌 API Endpoints
+Endpoint	Method	Description
+/api/auth/register	POST	Register user
+/api/auth/login	POST	Login user
+/api/user/profile	GET	Get profile
+/api/user/profile	PUT	Update profile
+/api/auth/logout	POST	Logout user
+🎯 Features
+
+✅ User Registration & Login
+
+✅ Dashboard with user info
+
+✅ Profile view & edit
+
+✅ Logout functionality
